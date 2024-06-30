@@ -1,10 +1,9 @@
 package test;
 
+import model.CardsInHand;
 import model.deck.Card;
 import model.deck.Denominations;
 import model.deck.Suits;
-import model.state.Start;
-import model.state.State;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +13,15 @@ public class RoleTest {
     @Test
     @DisplayName("만약 보유한 카드 합이 21을 넘으면 에이스를 1로 계산한다.")
     void test1() {
-        State state = new Start(new Card(Denominations.ACE, Suits.CLUBS), new Card(Denominations.ACE, Suits.HEARTS));
-        assertThat(state.score()).isEqualTo(12);
+        CardsInHand cards = new CardsInHand();
+        cards.receiveCard(new Card(Denominations.ACE, Suits.CLUBS));
+        cards.receiveCard(new Card(Denominations.ACE, Suits.HEARTS));
+        assertThat(cards.score()).isEqualTo(12);
+    }
+
+    @Test
+    @DisplayName("게임 시작 시 딜러와 플레이어는 2장의 카드를 받는다.")
+    void test2() {
+
     }
 }

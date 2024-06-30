@@ -1,14 +1,23 @@
 package model;
 
 import model.deck.Card;
-import model.state.Start;
-import model.state.State;
+import model.state.PlayerStarted;
+import model.state.Started;
 
 public class Player {
+    public final String name;
 
-    private State state;
+    private Started started;
+    private int bet;
 
-    public Player(Card card1, Card card2) {
-        this.state = new Start(card1, card2);
+    public Player(String name,Card...cards) {
+        this.name = name;
+        started=new PlayerStarted(cards);
     }
+
+    public void setBet(int bet){
+        this.bet=bet;
+    }
+
+
 }
