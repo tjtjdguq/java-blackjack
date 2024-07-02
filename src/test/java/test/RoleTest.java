@@ -1,11 +1,14 @@
 package test;
 
+import model.BlackJackGame;
 import model.CardsInHand;
 import model.deck.Card;
 import model.deck.Denominations;
 import model.deck.Suits;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.util.Scanner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -20,8 +23,7 @@ public class RoleTest {
     }
 
     @Test
-    @DisplayName("게임 시작 시 딜러와 플레이어는 2장의 카드를 받는다.")
+    @DisplayName("게임 시작 시 딜러와 플레이어는 2장의 카드를 받는다.") //junit runs in non-interactive environment => inputs from user is not available
     void test2() {
-
     }
 }

@@ -1,5 +1,6 @@
 package test;
 
+import model.Player;
 import model.deck.Card;
 import model.deck.Deck;
 import model.deck.Denominations;
@@ -69,6 +70,17 @@ class ObjectTest {
         for (Suits suit : Suits.values()) {
             assertThat(new Card(Denominations.KING, suit).score()).isEqualTo(10);
         }
+
+    }
+
+    @Test
+    @DisplayName("사용자와 딜러는 동일한 카드를 받지 않는다.")
+    void test3() {
+        //given
+        Card card1=new Card(Denominations.ACE,Suits.CLUBS);
+        Card card2=new Card(Denominations.KING,Suits.CLUBS);
+
+        new Player("ssh",card1,card2);
 
     }
 }

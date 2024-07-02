@@ -10,6 +10,7 @@ public class DealerStarted extends Started{
 
     @Override
     public void hit(Card card) {
+        cardsInHand.receiveCard(card);
         if(cardsInHand.isBlackJack()){
             isFinished=true;
             return;
@@ -22,6 +23,6 @@ public class DealerStarted extends Started{
             isFinished=true;
             return;
         }
-        cardsInHand.receiveCard(card);
+
     }
 }

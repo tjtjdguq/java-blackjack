@@ -32,4 +32,9 @@ public class Card {
     public int hashCode() {
         return Objects.hash(suit, denomination);
     }
+
+    @Override
+    public String toString() {
+        return  suit +""+ denomination ;
+    }
 }

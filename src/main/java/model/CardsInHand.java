@@ -37,4 +37,9 @@ public class CardsInHand {
         }
         return totalScore;
     }
+
+    @Override
+    public String toString() {
+        return "{" + cards + '}';
+    }
 }
