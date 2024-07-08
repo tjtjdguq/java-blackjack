@@ -13,12 +13,18 @@ public class Dealer {
         this.started = new DealerStarted(cards);
     }
 
-    public void print() {
+    public void printFirstCard() {
         System.out.print("딜러 : ");
-        started.printCard();
+        ((DealerStarted) started).printFirstCard();
     }
 
-    public void process( Card card) {
+    public void printResult() {
+        System.out.print("딜러 카드 : ");
+        started.printCard();
+        System.out.println(" - 결과: "+started.cardsInHand.score());
+    }
+
+    public void process(Card card) {
         while (!started.isFinished) {
             started.hit(card);
             System.out.print("딜러가 16이하면 한장의 카드를 더 받습니다.");

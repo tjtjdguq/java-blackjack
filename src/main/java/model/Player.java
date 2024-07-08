@@ -26,6 +26,10 @@ public class Player {
         System.out.print(this.name + "카드 : ");
         started.printCard();
     }
+    public void printResult(){
+        print();
+        System.out.println(" - 결과: "+started.cardsInHand.score());
+    }
 
     public void processDecision(Supplier<String> input, Supplier<Card> drawFromDeck) {
         while (!started.isFinished && "y".equalsIgnoreCase(input.get().trim())) {

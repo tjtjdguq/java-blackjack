@@ -6,7 +6,7 @@ import model.deck.Card;
 import java.util.Arrays;
 
 public abstract class Started {
-    CardsInHand cardsInHand;
+    public CardsInHand cardsInHand;
     public boolean isFinished = false;
 
     public Started(Card... cards) {

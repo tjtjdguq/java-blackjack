@@ -38,8 +38,12 @@ public class CardsInHand {
         return totalScore;
     }
 
+    public Card getFirstCard(){
+        return cards.iterator().next();
+    }
+
     @Override
     public String toString() {
-        return "{" + cards + '}';
+        return cards.toString() ;
     }
 }

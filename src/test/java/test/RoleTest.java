@@ -2,6 +2,7 @@ package test;
 
 import model.BlackJackGame;
 import model.CardsInHand;
+import model.Player;
 import model.deck.Card;
 import model.deck.Denominations;
 import model.deck.Suits;
@@ -25,5 +26,15 @@ public class RoleTest {
     @Test
     @DisplayName("게임 시작 시 딜러와 플레이어는 2장의 카드를 받는다.") //junit runs in non-interactive environment => inputs from user is not available
     void test2() {
+    }
+
+    @Test
+    @DisplayName("카드 두장을 받아 블랙잭이면 게임을 이긴다.")
+    void test3() {
+        //given
+        Player p=new Player("ssh",new Card(Denominations.ACE,Suits.CLUBS),new Card(Denominations.KING,Suits.CLUBS));
+
+        p.processDecision(()->"y",()->new Card(Denominations.EIGHT,Suits.DIAMONDS));
+        p.print();
     }
 }
